@@ -6,13 +6,13 @@
 # [1, 2, 2, 3]
 # (порядок не важен)
 
-a,b = [1, 2, 3, 2, 0], [5, 1, 2, 7, 3, 2]
-list = []
-for i in range(len(a)):
-    for e in range(len(b)):
-        if a[i] == b[e]:
-            list.append(b[e])
-print(list)
+# a,b = [1, 2, 3, 2, 0], [5, 1, 2, 7, 3, 2]
+# list = []
+# for i in range(len(a)):
+#     for e in range(len(b)):
+#         if a[i] == b[e]:
+#             list.append(b[e])
+# print(list)
 
 #---------------------------TASK 2-------------------------------------
 # Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
@@ -31,20 +31,59 @@ print(list)
 
 # print(fibonacci)
 
-n = int(input('Введите число: '))
+# n = int(input('Введите число: '))
 
-def fibonacci(n):
-    fibo_nums = []
-    a, b = 1, 1
-    for i in range(n):
-        fibo_nums.append(a)
-        a, b = b, a + b
-    a, b = 0, 1
-    for i in range (n + 1):
-        fibo_nums.insert(0, a)
-        a, b = b, a - b
-    return fibo_nums
+# def fibonacci(n):
+#     fibo_nums = []
+#     a, b = 1, 1
+#     for i in range(n):
+#         fibo_nums.append(a)
+#         a, b = b, a + b
+#     a, b = 0, 1
+#     for i in range (n + 1):
+#         fibo_nums.insert(0, a)
+#         a, b = b, a - b
+#     return fibo_nums
+#
+# fibo_nums = fibonacci(n)
+# print(fibonacci(n))
 
-fibo_nums = fibonacci(n)
-print(fibonacci(n))
-    
+# # Написать функцию num_translate(), переводящую числительные от 0 до 10 c английского на русский язык.
+
+num = input('введите число от 0 до 10 по английски: ')
+number = num.capitalize()
+
+def translate(number):
+
+    eng_to_rus_translate = {'One': 'один', 'Two': 'два', 'Three': 'три', 'Four': 'четыре', 'Five': 'пять',
+                            'Six': 'шесть', 'Seven': 'семь', 'Eight': 'восемь', 'Nine': 'девять',
+                            'Ten': 'десять', 'Zero': 'ноль'}
+    if number not in eng_to_rus_translate:
+        print('None')
+    else:
+        print(f'{number} по русски: {eng_to_rus_translate[number].capitalize()}')
+
+translate(number)
+
+
+
+# Написать функцию thesaurus_adv(), принимающую в качестве аргументов строки в формате «Имя Фамилия»
+# и возвращающую словарь, в котором ключи — первые буквы фамилий, а значения — словари, реализованные
+# по схеме предыдущего задания и содержащие записи, в которых фамилия начинается с соответствующей буквы.
+# Например:
+# thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева")
+
+# def thesaurus_adv(*args):
+#     some_list = list(args)
+#     some_dict = {}
+#     for i in range(len(some_list)):
+#         if some_list[i][0] in some_dict.keys():
+#             some_dict[some_list[i][0]].append(some_list[i])
+#         else:
+#             some_dict[some_list[i][0]] = [some_list[i]]
+#     print(some_dict)
+#
+#
+#
+#
+# thesaurus_adv("Иван", "Мария", "Петр", "Илья", "Петро", "Федор")
